@@ -19,7 +19,7 @@ func InitRouter() *gin.Engine {
 
 	gin.SetMode(setting.RunMode)
 
-	r.GET("/auth", jwt.JWT() ,api.GetAuth)
+	r.GET("/auth", api.GetAuth)
 
 	apiv1 := r.Group("/api/v1")
 	apiv1.Use(jwt.JWT())
